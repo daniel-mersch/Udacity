@@ -59,4 +59,5 @@ Plan and apply the infrastructure.
 `terraform apply`
 
 ### Output
-**Your words here**
+
+Internet ---- Load Balancer ---- Webserver VMs
