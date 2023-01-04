@@ -28,8 +28,8 @@ az login
 #### Policy
 First step is to deploy the policy, that any deployed component has to have minimum one tag.
 
-1. `az policy definition create -n tagging-policy --rules azurepolicy.tagging-policy.json`
-2. `az policy assignment create -n tagging-policy --policy tagging-policy -g udacity`
+    az policy definition create -n tagging-policy --rules azurepolicy.tagging-policy.json
+    az policy assignment create -n tagging-policy --policy tagging-policy -g udacity
 
 #### Packer
 To built a Packer image we need the following informations.
@@ -44,7 +44,7 @@ These informations are collected from the environment after a successful login t
 
 Now build the image
 
-    packer build server.json
+`packer build server.json`
 
 #### Terraform
 
