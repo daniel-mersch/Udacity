@@ -1,0 +1,42 @@
+{
+	"variables": {
+		"client_id": "{{env `ARM_CLIENT_ID`}}",
+		"client_secret": "{{env `ARM_CLIENT_SECRET`}}",
+		"subscription_id": "{{env `ARM_SUBSCRIPTION_ID`}}"
+	},
+	"builders": [{
+		"type": "azure-arm",
+ 
+		"client_id": "34288528-2302-435f-a1a1-916034270a92",
+		"client_secret": "x878Q~FbyuZc4XcYeLvDel8K3ktMDHLvq2vuaa9f",
+		"subscription_id": "1d777ce9-774b-4c85-8d8b-c7fb09bd2644",
+	 
+		"os_type": "Linux",
+		"image_publisher": "Canonical",
+		"image_offer": "UbuntuServer",
+		"image_sku": "18.04-LTS",
+	 
+		"managed_image_resource_group_name": "udacity",
+		"managed_image_name": "udacity_webserver",
+	 
+		"location": "East US",
+		"vm_size": "Standard_B1s",
+
+		"azure_tags": {
+			"course": "udacity"
+		}
+	}],
+	"provisioners": [{
+		"inline": [
+			"sudo apt-get update",
+			"sudo apt-get upgrade -y",
+			"sudo apt-get install apache2 -y",
+			"sudo ufw allow 'Apache'",
+			"echo 'Hello, World!' > index.html",
+			"sudo mv index.html /var/www/html/",
+			"nohup busybox httpd -f -p 80 &"
+		],
+		"inline_shebang": "/bin/sh -x",
+		"type": "shell"
+	}]
+}

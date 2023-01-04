@@ -1,0 +1,34 @@
+{
+  "variables": {
+    "client_id": "",
+    "client_secret": "",
+    "subscription_id": ""
+  },
+  "builders": [{
+    "type": "azure-arm",
+ 
+    "client_id": "f7ac386a-d422-438c-96c5-b66d11768449",
+    "client_secret": "Dvm8Q~SfwUXRddKqX7LtA6UMrTteg91ilSuQtb3w",
+    "subscription_id": "0b72aa91-69d1-4842-8da0-1dbc098c1665",
+ 
+    "os_type": "Linux",
+    "image_publisher": "Canonical",
+    "image_offer": "UbuntuServer",
+    "image_sku": "18.04-LTS",
+ 
+    "managed_image_resource_group_name": "ODL-clouddevops-221054",
+    "managed_image_name": "myPackerImage",
+ 
+    "location": "East US",
+    "vm_size": "Standard_B1s"
+  }],
+  "provisioners": [{
+    "inline": [
+        "apt-get update",
+        "apt-get upgrade -y"
+    ],
+    "inline_shebang": "/bin/sh -x",
+    "type": "shell",
+    "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'"
+  }]
+}
