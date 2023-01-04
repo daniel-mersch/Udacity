@@ -59,9 +59,11 @@ Plan and apply the infrastructure.
 `terraform apply`
 
 ### Output
+`
 Internet ---- Load Balancer ---- +------------------------------------+
                                  :--- Virtual Network              ---:
                                  :---- Subnet                     ----:
                                  :----- Network Security Group    ----:
                                  : Availability Set --- Webserver VMs :
                                  +------------------------------------+
+`                                 
