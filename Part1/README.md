@@ -44,7 +44,7 @@ The informations are collected from the environment after a successful login to 
 
 Now build the image
 
-`packer build server.json`
+    packer build server.json
 
 #### Terraform
 
@@ -55,8 +55,8 @@ First, please update the vars.tf file. Minimum required values:
 
 Plan and apply the infrastructure.
 
-`terraform plan`
-`terraform apply`
+    terraform plan
+    terraform apply
 
 ### Output
 
