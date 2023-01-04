@@ -38,7 +38,7 @@ To built a Packer image we need the following informations.
 * client_secret
 * subscription_id
 
-The informations are collected from the environment after a successful login to azure via the CLI. The only variable you have to enter is the ressource group, where the Packer image will be stored.
+These informations are collected from the environment after a successful login to Azure via the CLI (àz login`). The only variable you have to submit is the ressource group, where the Packer image will be stored.
 
 * managed_image_resource_group_name
 
@@ -64,6 +64,7 @@ Plan and apply the infrastructure.
                                      :--- Virtual Network              ---:
                                      :---- Subnet                     ----:
                                      :----- Network Security Group    ----:
-                                     : Availability Set --- Webserver VMs :
+                                     :------ Availability Set        -----:
+                                     :------- Webserver VMs         ------:
                                      +------------------------------------+
                                  
